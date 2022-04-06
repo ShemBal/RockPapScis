@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let playerSelect = "paper";
+        console.log(playerSelect)
+
+        let win = 0; let lose = 0; let tie = 0;
+
+        function computerPlay() {
+            let hand = ["rock","paper","scissors"];
+            let computerS = hand[Math.floor(Math.random()*hand.length)];
+            return computerS;
+        }
+        let computerSelect = String(computerPlay())
+        console.log(computerSelect)
+
+        function playround(playerSelect,computerSelect) {
+            switch (true) {
+            
+            case playerSelect == computerSelect:
+                console.log('Awe Shoot try again');
+                break;
+            case playerSelect == "rock" && computerSelect == "paper":
+                console.log('Soz, paper beats rock');
+                return lose += 1;
+                break;
+            case playerSelect == "rock" && computerSelect == "scissors":
+                console.log("HOHO, You've crushed scissors");
+                return win += 1
+                break;
+            case playerSelect == "paper" && computerSelect == "scissors":
+                console.log('You got cut holmes');
+                return lose += 1
+                break;
+            case playerSelect == "paper" && computerSelect == "rock":
+                console.log('Youve got it covered');
+                return win += 1
+                break;
+            case playerSelect == "scissors" && computerSelect == "rock":
+                console.log('Crushed ... Ouchie');
+                return lose += 1
+                break;
+            case playerSelect == "scissors" && computerSelect == "paper":
+                console.log('Cut it uuup');
+                return win += 1
+                break;
+        }}
+
+        console.log(win)
+        console.log(lose)
+
+       function game(playerSelect,computerSelect) {
+            for (let i = 0; i < 5; i++) {
+
+                let playerS = prompt("Let play, rock paper scissors >:D");
+                let playerSelect = playerS.toLowerCase();
+                
+                let computerSelect = String(computerPlay());
+                console.log(computerSelect);
+                playround(playerSelect,computerSelect)
+            };
+            console.log(win);
+            console.log(lose);
+
+            if (win == lose) {return console.log('TIED GAME!');
+            } else if (win > lose) {return console.log('YOU WIN');
+            } else {return console.log('YOU LOSE')};
+                
+        }
+
+        console.log(game(playerSelect,computerSelect))
+
+        </script>
+        
+</body>
+</html>

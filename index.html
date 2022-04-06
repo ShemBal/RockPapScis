@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let playerSelect = "rock";
+
+        let computerSelect = function computerPlay() {
+            let hand = ["rock","paper","scissors"];
+            let computerSelect = hand[Math.floor(Math.random()*hand.length)];
+            return computerSelect;
+        }
+        console.log(computerSelect());
+        console.log(playerSelect)
+
+        function rpc(playerSelect,computerSelect){
+            if (playerSelect == "rock") {
+                return ock(computerSelect);}
+            else if (playerSelect == "paper") {
+                return ppr(playerSelect,computerSelect);}
+            else {return scx(playerSelect,computerSelect);}
+        }
+
+        function ock(computerSelect) {
+            if (computerSelect == "paper") {declare = "You Win!";}
+            else if (computerSelect == "scissors") {declare = "You lose!";}
+            else {declare = "its a draw";} return declare;
+        }
+        console.log(ock(computerSelect))
+
+        function ppr(computerSelect) {
+            if (computerSelect == "scissors"){declare = "You Win!";}
+            else if (computerSelect == "rock"){declare = "You lose!";}
+            else {declare = "its a draw";} return declare;
+        }
+        console.log(ppr(computerSelect))
+
+        function scx(computerSelect) {
+            if (computerSelect == "paper"){declare = "You Win!";}
+            else if (computerSelect == "scissors"){declare = "You lose!";}
+            else {declare = "its a draw";} return declare;
+        }
+        console.log(scx(computerSelect))
+        console.log(rpc(playerSelect,computerSelect))
+
+    </script>
+</body>
+</html>
